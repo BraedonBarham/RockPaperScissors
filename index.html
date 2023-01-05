@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="javascript.js"></script>
+        <script src="javascript.js" defer></script>
     </head>
     <body>
         <div class="titleBox firstDiv">
@@ -12,22 +12,27 @@
         </div>
         
         <div class="buttonsBox middleDiv">
-            <button class="selectorButton rock">
+            <button class="selectorButton" id="rock">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS49tRjHKMZEB3Gp2IXZX3ABJZLlC2KDqJ54Q&usqp=CAU", alt="ROCK">
                 
             </button>
-            <button class="selectorButton paper">
+            <button class="selectorButton" id="paper">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTahMLNmb45T0L1ghLz7sd5P3zl-_hs4iyjLQ&usqp=CAU", alt="PAPER">
             </button>
-            <button class="selectorButton scissors">
+            <button class="selectorButton" id="scissors">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZHQxppuQ3S7gxKtq0eHaPK_W3ZutH3QtFg&usqp=CAU", alt="SCISSORS">
             </button>
         </div>
         
         <div class="resultsBox lastDiv">
-            <h3>WINNER IS: </h3>
-            <h4>SCORE IS: </h4>
-
+            <div>
+                <h3>WINNER IS: </h3>
+                <h3 id="winner">__________</h3>
+            </div>
+            <div>
+                <h4 id="scoreIs"> SCORE IS: </h4>
+                <h4 id="score">0</h4>
+            </div>
         </div>
 
 

@@ -12,46 +12,93 @@ function computerChoice(){
     return getComputerChoice;
 }
 
-console.log(computerChoice())
 
 
 
 
-var buttons = document.querySelectorAll("button")
-console.log(buttons)
-Array.from(buttons).forEach(function(e){
-e.addEventListener('click', console.log("CLICKED"))
+// function createButtons(){
 
-});
+//     var buttons = document.querySelectorAll("button")
+//     const butts = [];
+//     for (i = 0; i < buttons.length; i++){
+//         butts.push(buttons[i])
+//         console.log(buttons[i].id)
+//         buttons[i].addEventListener('click', function(){
+//             console.log(butts[2])
+//             clickHandler(butts[i])
+//             })
+//     }
+// }
 
 
+// function choiceHandler(){
+//     if (btn[0].id == "rock"){
+//         console.log("rock")
+//         return "rock" 
+//     }
+//     if (buttons.id == "paper"){
+//         return "paper" 
+//     }
+//     if (buttons.id == "scissors"){
+//         return "scissors" 
+//     }
 
+// }
 
-
-
-
-function getPlayerSelection(){
-    let selection = prompt().toLowerCase()
-    selection = selection
-    return getPlayerSelectionValid(selection);
-}
-
-function getPlayerSelectionValid(selection){
-    if (selection == "rock" || selection == "paper" || selection == "scissors"){
-        return selection
+function changeWinner(btn){
+    let score = document.getElementById("score")
+    let winner = document.getElementById("winner")
+    if (gameLogic(btn.id, computerChoice())){
+        winner.textContent = "You!"
+        console.log(score.textContent)
+        score.textContent = (parseInt(score.textContent) + 1)
     }
     else{
-        console.log("Input correct object!!!")
-        getPlayerSelection()
+        winner.textContent = "Computer!"
     }
+    
 
 }
+
+function createButtons(){
+
+var btn1 = document.querySelector("#rock")
+btn1.addEventListener('click', function(){
+    clickHandler(btn1)
+      })
+
+var btn2 = document.querySelector("#paper")
+btn2.addEventListener('click', function(){
+    clickHandler(btn2)
+    
+    })
+var btn3 = document.querySelector("#scissors")
+btn3.addEventListener('click', function(){
+clickHandler(btn3)
+
+})
+}
+
+
+function clickHandler(btn){
+    let playerCount = 0;
+    let computerCount = 0;
+    console.log(btn.id)
+    changeWinner(btn)
+    
+    console.log(`Player has ${playerCount} wins, and Computer has ${computerCount} wins!`)
+
+}
+
+
+
 
 function gameLogic(playerSelection, getComputerChoice){
 
     if (playerSelection === getComputerChoice){
-        console.log("Tie - Getting new selections!");
-        return gameLogic(getPlayerSelection(), computerChoice())
+        console.log(playerSelection, getComputerChoice)
+        console.log("Tie - Pick again!");
+        
     }
 
     else if (playerSelection == "rock" && getComputerChoice == "scissors"){
@@ -71,31 +118,11 @@ function gameLogic(playerSelection, getComputerChoice){
 
 
 
-
-
-
-
-function playRound(){
-    let winner;
-    let playerCount = 0;
-    let computerCount = 0;
-    //for (let i = 0; i < 5; i++){
-   // winner = gameLogic(getPlayerSelection(), computerChoice())
-    //if (winner){
-    //    playerCount++;
-    //}
-    //else{
-        computerCount++;
-   // }
-
-
-  //}
-  console.log(`Player has ${playerCount} wins, and Computer has ${computerCount} wins!`)
-}
-
-
 function game(){
-    playRound()
+
+    createButtons()
+
+
 
 
 
