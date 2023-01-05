@@ -1,0 +1,55 @@
+
+
+html{
+    font-size: 32px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-image: linear-gradient(black, grey,lightgrey, lightgrey, grey, black);
+
+    
+}
+div {
+
+    flex-basis: 33vh;
+    
+}
+
+
+.lastDiv{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.titleBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    
+
+}
+
+.buttonsBox {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button{
+    
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+}

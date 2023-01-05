@@ -15,6 +15,21 @@ function computerChoice(){
 console.log(computerChoice())
 
 
+
+
+var buttons = document.querySelectorAll("button")
+console.log(buttons)
+Array.from(buttons).forEach(function(e){
+e.addEventListener('click', console.log("CLICKED"))
+
+});
+
+
+
+
+
+
+
 function getPlayerSelection(){
     let selection = prompt().toLowerCase()
     selection = selection
@@ -54,21 +69,27 @@ function gameLogic(playerSelection, getComputerChoice){
 }
 
 
+
+
+
+
+
+
 function playRound(){
     let winner;
     let playerCount = 0;
     let computerCount = 0;
-    for (let i = 0; i < 5; i++){
-    winner = gameLogic(getPlayerSelection(), computerChoice())
-    if (winner){
-        playerCount++;
-    }
-    else{
+    //for (let i = 0; i < 5; i++){
+   // winner = gameLogic(getPlayerSelection(), computerChoice())
+    //if (winner){
+    //    playerCount++;
+    //}
+    //else{
         computerCount++;
-    }
+   // }
 
 
-  }
+  //}
   console.log(`Player has ${playerCount} wins, and Computer has ${computerCount} wins!`)
 }
 
